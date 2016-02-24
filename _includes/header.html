@@ -1,0 +1,19 @@
+{% if page.title == "Home" or page.title == "Blog" %}{% assign x = true %}{% endif %}
+
+{% if x == true %}
+    <header class="home__header">
+        <img alt="{{ site.name }}" src="{{ site.url }}/{{ site.picture }}" />
+
+        <h1>{{ site.name }}</h1>
+        <h2>{{ site.bio }}</h2>
+
+        <div class="home__header-social">
+            <a href="https://github.com/{{ site.github }}" target="_blank"><svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg></a>
+            <a href="http://linkedin.com/{{ site.linkedin }}" target="_blank"><svg class="icon icon-linkedin"><use xlink:href="#icon-linkedin"></use></svg></a>
+             <a href="https://scholar.google.com/citations?user={{ site.scholar }}" target="_blank"><svg class="icon icon-scholar"><use xlink:href="#icon-scholar"></use></svg></a>
+            <a href="mailto:{{ site.email }}" target="_blank"><svg class="icon icon-mail"><use xlink:href="#icon-mail"></use></svg></a>
+        </div>
+    </header>
+{% endif %}
+
+{% include nav.html %}
