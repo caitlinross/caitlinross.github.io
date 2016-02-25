@@ -1,4 +1,4 @@
-{% if true %}{% assign x = true %}{% endif %}
+{% if page.title == "Home" or page.title == "Blog" %}{% assign x = true %}{% endif %}
 
 {% if x == true %}
     <header class="home__header">

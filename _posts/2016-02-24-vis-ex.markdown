@@ -9,8 +9,8 @@ tag: markdown
 I've been working on some visualizations for research and class,
 so links will be posted here:
 
-* [Parallel Coordinates](http://caitlinross.github.io/parcoords.html)
-* [Parallel Coordinates Improved](http://caitlinross.github.io/parcoords2.html)
+* [Parallel Coordinates](http://caitlinross.github.io/vis/parcoords.html)
+* [Parallel Coordinates Improved](http://caitlinross.github.io/vis/parcoords2.html)
 
 
 
