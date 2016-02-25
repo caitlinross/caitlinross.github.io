@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D3 Test</title>
+        <style>
+        </style>
+    </head>
+    <body>
+        <script type="text/javascript" src="d3.js"></script>
+        <script type="text/javascript" src="d3.parcoords.js"></script>
+        <link rel="stylesheet" type="text/css" href="d3.parcoords.css">
+        <script type="text/javascript">
+        // Adapted from https://syntagmatic.github.io/parallel-coordinates/ by Kai Chang
+        // this uses Chang's d3.parcoords javascript library that is built on top of d3 
+
+        var pc1, pc2;
+        var colorgen, color1, color2;
+
+        // load csv file and create the chart
+        d3.csv('data/alldata-batch.csv', function(data) {
+            //var parcoords = d3.parcoords()("#batch")
+            pc1 = d3.parcoords()("#batch")
+                .data(data)
+                .color(color1)
+                .alpha(0.25)
+                .composite("darker")
+                .margin({ top: 54, left: 50, bottom: 12, right: 0 })
+                .mode("queue")
+                .autoscale()
+                .render()
+                .createAxes()
+                .reorderable()
+                .shadows()
+                .brushMode("1D-axes");  // enable brushing
+
+            pc1.svg.selectAll("text")
+                .style("font", "10px sans-serif");
+
+            //pc1.dimensions(["batch"])
+            //    .attr("class",
+            //    .updateAxes();
+            //pc1.detectDimensions()
+            //    .dimensions(["batch"])
+            //    .attr("yscale", "log")
+            //    .render()
+             //   .updateAxes();
+
+        });
+
+        // load csv file and create the chart
+        d3.csv('data/alldata-gvt.csv', function(data) {
+
+            //var parcoords = d3.parcoords()("#gvt")
+            pc2 = d3.parcoords()("#gvt")
+                .data(data)
+                .color(color2)
+                .alpha(0.25)
+                .composite("darker")
+                .margin({ top: 54, left: 50, bottom: 12, right: 0 })
+                .mode("queue")
+                .render()
+                .reorderable()
+                .shadows()
+                .brushMode("1D-axes");  // enable brushing
+
+            pc2.svg.selectAll("text")
+                .style("font", "10px sans-serif");
+        });
+
+        var changeColors = function(){
+            var choice = document.getElementById('colorChoice').selectedOptions[0].value;
+            var divB = document.getElementById("batch");
+            var divG = document.getElementById("gvt");
+            var elements = document.getElementsByClassName("tick");
+
+            if (choice % 2 == 0)
+            {
+                divB.style.backgroundColor = "white";
+                divG.style.backgroundColor = "white";
+                //for (var i = 0; i < elements.length; i++){
+                //    elements[i].style.Color = "black";
+                //}
+                d3.selectAll("body").selectAll("svg")
+                    .selectAll("g").selectAll("text")
+                    .style("fill", "black");
+            }
+            else
+            {
+                divB.style.backgroundColor = "black";
+                divG.style.backgroundColor = "black";
+                //for (var i = 0; i < elements.length; i++){
+                //    elements[i].attr = "white";
+                //}
+                d3.selectAll(".axis")
+                    .select("text")
+                    .style("fill", "white");
+                //d3.selectAll("body").select("text")
+                //    .attr("fill", "white");
+            }
+
+            if (choice == 0 || choice == 1){
+                black();
+            }
+            else if (choice == 2 || choice == 3){
+                originalColor();
+            }
+            else if (choice == 4 || choice == 5){
+                gray();
+            }
+            else if (choice == 6 || choice == 7){
+                coolColors();
+            }
+            else if (choice == 8 || choice == 9){
+                warmColors();
+            }
+            else if (choice == 10 || choice == 11){
+                boldColors();
+            }
+            else if (choice == 12 || choice == 13){
+                pastelColors();
+            }
+            else if (choice == 14 || choice == 15){
+                colorBlind();
+            }
+
+        };
+
+        var redrawParcoords = function(){
+            pc1.color(color1)
+                .alpha(0.25)
+                .composite("darker")
+                .margin({ top: 54, left: 50, bottom: 12, right: 0 })
+                .mode("queue")
+                .autoscale()
+                .render()
+                .createAxes()
+                .reorderable()
+                .shadows()
+                .brushMode("1D-axes");  // enable brushing
+            pc2.color(color2)
+                .alpha(0.25)
+                .composite("darker")
+                .margin({ top: 54, left: 50, bottom: 12, right: 0 })
+                .mode("queue")
+                .autoscale()
+                .render()
+                .createAxes()
+                .reorderable()
+                .shadows()
+                .brushMode("1D-axes");  // enable brushing
+        };
+
+        var originalColor = function(){
+            colorgen = d3.scale.ordinal()
+                .range(["#a6cee3","#1f78b4","#b2df8a","#33a02c",
+                    "#fb9a99","#e31a1c","#fdbf6f","#ff7f00",
+                    "#cab2d6","#6a3d9a","#ffff99","#b15928"]);
+
+            color1 = function(d) { return colorgen(d.batch); };
+            color2 = function(d) { return colorgen(d.gvt); };
+            redrawParcoords();
+        }
+
+        var black = function(){
+            colorgen = undefined; 
+
+            color1 = undefined;
+            color2 = undefined;
+            redrawParcoords();
+        }
+
+        var gray = function(){
+            colorgen = d3.scale.ordinal()
+                .range(["#000000", "#252525","#404040","#595959", "#737373",
+                    "#8c8c8c","#a6a6a6","#bfbfbf","#d9d9d9",
+                    "#f2f2f2"]);
+
+            color1 = function(d) { return colorgen(d.batch); };
+            color2 = function(d) { return colorgen(d.gvt); };
+            redrawParcoords();
+        }
+
+        var coolColors = function(){
+            colorgen = d3.scale.ordinal()
+                .range(["#6f4242", "#153165", "#bc8f8f",
+                        "#186574", "#aeaaa7", "#348b9c", "#362819",
+                        "#8ebfc8", "#615e3f"]);
+
+            color1 = function(d) { return colorgen(d.batch); };
+            color2 = function(d) { return colorgen(d.gvt); };
+            redrawParcoords();
+        }
+
+        var warmColors = function(){
+            colorgen = d3.scale.ordinal()
+                .range(["#e70000", "#ff6103", "#cd661d",
+                        "#ffcc11", "#ee4c4c", "#aadd00", "#ee4000",
+                        "#8b2500", "#9ccb19"]);
+
+            color1 = function(d) { return colorgen(d.batch); };
+            color2 = function(d) { return colorgen(d.gvt); };
+            redrawParcoords();
+        }
+
+        var boldColors = function(){
+            colorgen = d3.scale.ordinal()
+                .range(["#e41a1c", "#377eb8", "#4daf4a",
+                        "#984ea3", "#ff7f00", "#ffff33", "#a65628",
+                        "#f781bf", "#999999"]);
+
+            color1 = function(d) { return colorgen(d.batch); };
+            color2 = function(d) { return colorgen(d.gvt); };
+            redrawParcoords();
+        }
+
+        var pastelColors = function(){
+            colorgen = d3.scale.ordinal()
+                .range(["#fbb4ae", "#b3cde3", "#ccebc5",
+                        "#decbe4", "#fed9a6", "#ffffcc", "#e5d8bd",
+                        "#fddaec", "#f2f2f2"]);
+
+            color1 = function(d) { return colorgen(d.batch); };
+            color2 = function(d) { return colorgen(d.gvt); };
+            redrawParcoords();
+        }
+
+        var colorBlind = function(){
+            colorgen = d3.scale.ordinal()
+                .range(["#7f3b08", "#2d004b", "#b35806",
+                        "#b2abd2", "#e08214", "#8073ac", "#fdb863",
+                        "#542788", "#fee0b6"]);
+
+            color1 = function(d) { return colorgen(d.batch); };
+            color2 = function(d) { return colorgen(d.gvt); };
+            redrawParcoords();
+        }
+
+        // to change on changing checkboxes
+        var changeAxes = function(){
+            var whichAxes = [];
+            if (d3.select("#gvtComps").property("checked")){ 
+                whichAxes.push("Total GVT Computations");
+            }
+            if (d3.select("#allRed").property("checked")){ 
+                whichAxes.push("Total All Reduce Calls");
+            }
+            if (d3.select("#avgRed").property("checked")){ 
+                whichAxes.push("Average Reduction / GVT");
+            }
+            if (d3.select("#totalProc").property("checked")){ 
+                whichAxes.push("total events processes");
+            }
+            if (d3.select("#eventsRB").property("checked")){ 
+                whichAxes.push("events rolled back");
+            }
+            if (d3.select("#efficiency").property("checked")){ 
+                whichAxes.push("efficiency");
+            }
+            if (d3.select("#totalRem").property("checked")){ 
+                whichAxes.push("total remote network events processed");
+            }
+            if (d3.select("#perRem").property("checked")){ 
+                whichAxes.push("percent remote events");
+            }
+            if (d3.select("#totalRB").property("checked")){ 
+                whichAxes.push("total rollbacks");
+            }
+            if (d3.select("#primaryRB").property("checked")){ 
+                whichAxes.push("primary rollbacks");
+            }
+            if (d3.select("#secondaryRB").property("checked")){ 
+                whichAxes.push("secondary roll backs");
+            }
+            if (d3.select("#fossilCollect").property("checked")){ 
+                whichAxes.push("fossil collect attempts");
+            }
+            if (d3.select("#netevents").property("checked")){ 
+                whichAxes.push("net events processed");
+            }
+            if (d3.select("#remoteSends").property("checked")){ 
+                whichAxes.push("remote sends");
+            }
+            if (d3.select("#remoteRecvs").property("checked")){ 
+                whichAxes.push("remote recvs");
+            }
+
+            var gvtAxes = whichAxes.slice();
+            whichAxes.splice(0, 0, "batch");
+            pc1.detectDimensions()
+                .dimensions(whichAxes)
+                .render()
+                .updateAxes();
+
+            gvtAxes.splice(0, 0, "gvt");
+            pc2.detectDimensions()
+                .dimensions(gvtAxes)
+                .render()
+                .updateAxes();
+            
+        };
+
+
+    </script>
+    <div id="batch" class="parcoords" style="width:1360px;height:550px"></div>
+    <div id="gvt" class="parcoords" style="width:1360px;height:550px"></div>
+    <div id="metricSelections" style="width:1360px;height:200px">
+        Uncheck boxes to hide axes from the display </br>
+        <input type="checkbox" class="filter_button" id="gvtComps" onchange="changeAxes()" checked>Total GVT Computations</input>
+        <input type="checkbox" class="filter_button" id="allRed" onchange="changeAxes()" checked>AllReduce calls</input>
+        <input type="checkbox" class="filter_button" id="avgRed" onchange="changeAxes()" checked>Average Reduction/GVT</input>
+        <input type="checkbox" class="filter_button" id="totalProc" onchange="changeAxes()" checked>Total events processed</input>
+        <input type="checkbox" class="filter_button" id="eventsRB" onchange="changeAxes()" checked>events rolled back</input></br>
+        <input type="checkbox" class="filter_button" id="efficiency" onchange="changeAxes()" checked>efficiency</input>
+        <input type="checkbox" class="filter_button" id="totalRem" onchange="changeAxes()" checked>total remote (network) events processed</input>
+        <input type="checkbox" class="filter_button" id="perRem" onchange="changeAxes()" checked>percent remote events</input>
+        <input type="checkbox" class="filter_button" id="totalRB" onchange="changeAxes()" checked>total roll backs</input>
+        <input type="checkbox" class="filter_button" id="primaryRB" onchange="changeAxes()" checked>primary roll backs</input></br>
+        <input type="checkbox" class="filter_button" id="secondaryRB" onchange="changeAxes()" checked>secondary roll backs</input>
+        <input type="checkbox" class="filter_button" id="fossilCollect" onchange="changeAxes()" checked>fossil collect attempts</input>
+        <input type="checkbox" class="filter_button" id="netevents" onchange="changeAxes()" checked>net events processed</input>
+        <input type="checkbox" class="filter_button" id="remoteSends" onchange="changeAxes()" checked>remote sends</input>
+        <input type="checkbox" class="filter_button" id="remoteRecvs" onchange="changeAxes()" checked>remote recvs</input>
+    </div>
+    <div id ="colorSelections" style="width:300px;height:200px">
+        Color Schemes:</br> 
+        <select onchange="changeColors()" id="colorChoice">
+            <option value="0">Black on white bg</option>
+            <option value="1">White on black bg</option>
+            <option value="2">Colorful on white bg</option>
+            <option value="3">Colorful on black bg</option>
+            <option value="4">Gray on white bg</option>
+            <option value="5">Gray on black bg</option>
+            <option value="6">Cool tones on white bg</option>
+            <option value="7">Cool tones on black bg</option>
+            <option value="8">Warm tones on white bg</option>
+            <option value="9">Warm tones on black bg</option>
+            <option value="10">Bold colors on white bg</option>
+            <option value="11">Bold colors on black bg</option>
+            <option value="12">Pastel colors on white bg</option>
+            <option value="13">Pastel colors on black bg</option>
+            <option value="14">Color blind aware on white bg</option>
+            <option value="15">Color blind aware on black bg</option>
+        </select>
+    </div>
+
+    </body>
+</html>

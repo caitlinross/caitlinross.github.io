@@ -1,0 +1,17 @@
+---
+title: "Visualizations"
+layout: post
+date: 2016-02-24 22:18
+tag: markdown
+#star: true
+---
+
+I've been working on some visualizations for research and class,
+so links will be posted here:
+* [Parallel Coordinates](http://caitlinross.github.io/parcoords.html)
+* [Parallel Coordinates Improved](http://caitlinross.github.io/parcoords2.html)
+
+
+
+
+
