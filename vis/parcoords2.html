@@ -7,9 +7,9 @@
         </style>
     </head>
     <body>
-        <script type="text/javascript" src="d3/d3.js"></script>
-        <script type="text/javascript" src="d3/d3.parcoords.js"></script>
-        <link rel="stylesheet" type="text/css" href="d3/d3.parcoords.css">
+        <script type="text/javascript" src="d3.js"></script>
+        <script type="text/javascript" src="d3.parcoords.js"></script>
+        <link rel="stylesheet" type="text/css" href="d3.parcoords.css">
         <script type="text/javascript">
         // Adapted from https://syntagmatic.github.io/parallel-coordinates/ by Kai Chang
         // this uses Chang's d3.parcoords javascript library that is built on top of d3 
@@ -19,10 +19,17 @@
 
         // load csv file and create the chart
         d3.csv('data/alldata-batch.csv', function(data) {
-            //var parcoords = d3.parcoords()("#batch")
+            colorgen = d3.scale.ordinal()
+                .range(["#a6cee3","#1f78b4","#b2df8a","#33a02c",
+                    "#fb9a99","#e31a1c","#fdbf6f","#ff7f00",
+                    "#cab2d6","#6a3d9a","#ffff99","#b15928"]);
+
+            color1 = function(d) { return colorgen(d.batch); };
+            color2 = function(d) { return colorgen(d.gvt); };
             pc1 = d3.parcoords()("#batch")
                 .data(data)
                 .color(color1)
+                .hideAxis(["Total GVT Computations", "Average Reduction / GVT", "fossil collect attempts"])
                 .alpha(0.25)
                 .composite("darker")
                 .margin({ top: 54, left: 50, bottom: 12, right: 0 })
@@ -37,24 +44,22 @@
             pc1.svg.selectAll("text")
                 .style("font", "10px sans-serif");
 
-            //pc1.dimensions(["batch"])
-            //    .attr("class",
-            //    .updateAxes();
-            //pc1.detectDimensions()
-            //    .dimensions(["batch"])
-            //    .attr("yscale", "log")
-            //    .render()
-             //   .updateAxes();
-
         });
 
         // load csv file and create the chart
         d3.csv('data/alldata-gvt.csv', function(data) {
+            colorgen = d3.scale.ordinal()
+                .range(["#a6cee3","#1f78b4","#b2df8a","#33a02c",
+                    "#fb9a99","#e31a1c","#fdbf6f","#ff7f00",
+                    "#cab2d6","#6a3d9a","#ffff99","#b15928"]);
 
-            //var parcoords = d3.parcoords()("#gvt")
+            color1 = function(d) { return colorgen(d.batch); };
+            color2 = function(d) { return colorgen(d.gvt); };
+
             pc2 = d3.parcoords()("#gvt")
                 .data(data)
                 .color(color2)
+                .hideAxis(["Total GVT Computations", "Average Reduction / GVT", "fossil collect attempts"])
                 .alpha(0.25)
                 .composite("darker")
                 .margin({ top: 54, left: 50, bottom: 12, right: 0 })
@@ -78,32 +83,18 @@
             {
                 divB.style.backgroundColor = "white";
                 divG.style.backgroundColor = "white";
-                //for (var i = 0; i < elements.length; i++){
-                //    elements[i].style.Color = "black";
-                //}
-                d3.selectAll("body").selectAll("svg")
-                    .selectAll("g").selectAll("text")
-                    .style("fill", "black");
             }
             else
             {
                 divB.style.backgroundColor = "black";
                 divG.style.backgroundColor = "black";
-                //for (var i = 0; i < elements.length; i++){
-                //    elements[i].attr = "white";
-                //}
-                d3.selectAll(".axis")
-                    .select("text")
-                    .style("fill", "white");
-                //d3.selectAll("body").select("text")
-                //    .attr("fill", "white");
             }
 
             if (choice == 0 || choice == 1){
-                black();
+                originalColor();
             }
             else if (choice == 2 || choice == 3){
-                originalColor();
+                blackWhite(choice);
             }
             else if (choice == 4 || choice == 5){
                 gray();
@@ -124,6 +115,31 @@
                 colorBlind();
             }
 
+            //have to make text and axis object changes after redrawing lines
+            if (choice % 2 == 0)
+            {
+                d3.selectAll(".axis")
+                    .selectAll("text")
+                    .style("fill", "black");
+                d3.selectAll(".tick")
+                    .selectAll("line")
+                    .style("stroke", "black");
+                d3.selectAll(".axis")
+                    .selectAll("path")
+                    .style("stroke", "black");
+            }
+            else
+            {
+                d3.selectAll(".axis")
+                    .selectAll("text")
+                    .style("fill", "white");
+                d3.selectAll(".tick")
+                    .selectAll("line")
+                    .style("stroke", "white");
+                d3.selectAll(".axis")
+                    .selectAll("path")
+                    .style("stroke", "white");
+            }
         };
 
         var redrawParcoords = function(){
@@ -162,17 +178,30 @@
             redrawParcoords();
         }
 
-        var black = function(){
-            colorgen = undefined; 
+        var blackWhite = function(choice){
+            if (choice % 2 == 0)
+            {
+                colorgen = undefined; 
 
-            color1 = undefined;
-            color2 = undefined;
+                color1 = undefined;
+                color2 = undefined;
+            }
+            else
+            {
+                colorgen = d3.scale.ordinal()
+                    .range(["#f4f4f4","#ffffff","#c6c6c6","#e0e0e0",
+                        "#e7e7e7","#eaeaea","#eeeeee","#f1f1f1",
+                        "#fbfbfb"]);
+
+                color1 = function(d) { return colorgen(d.batch); };
+                color2 = function(d) { return colorgen(d.gvt); };
+            }
             redrawParcoords();
         }
 
         var gray = function(){
             colorgen = d3.scale.ordinal()
-                .range(["#000000", "#252525","#404040","#595959", "#737373",
+                .range(["#585858", "#6e6e6e","#404040","#595959", "#737373",
                     "#8c8c8c","#a6a6a6","#bfbfbf","#d9d9d9",
                     "#f2f2f2"]);
 
@@ -300,15 +329,16 @@
             
         };
 
+        
 
     </script>
     <div id="batch" class="parcoords" style="width:1360px;height:550px"></div>
     <div id="gvt" class="parcoords" style="width:1360px;height:550px"></div>
-    <div id="metricSelections" style="width:1360px;height:200px">
+    <div id="metricSelections" style="width:1360px;height:100px">
         Uncheck boxes to hide axes from the display </br>
-        <input type="checkbox" class="filter_button" id="gvtComps" onchange="changeAxes()" checked>Total GVT Computations</input>
+        <input type="checkbox" class="filter_button" id="gvtComps" onchange="changeAxes()">Total GVT Computations</input>
         <input type="checkbox" class="filter_button" id="allRed" onchange="changeAxes()" checked>AllReduce calls</input>
-        <input type="checkbox" class="filter_button" id="avgRed" onchange="changeAxes()" checked>Average Reduction/GVT</input>
+        <input type="checkbox" class="filter_button" id="avgRed" onchange="changeAxes()">Average Reduction/GVT</input>
         <input type="checkbox" class="filter_button" id="totalProc" onchange="changeAxes()" checked>Total events processed</input>
         <input type="checkbox" class="filter_button" id="eventsRB" onchange="changeAxes()" checked>events rolled back</input></br>
         <input type="checkbox" class="filter_button" id="efficiency" onchange="changeAxes()" checked>efficiency</input>
@@ -317,7 +347,7 @@
         <input type="checkbox" class="filter_button" id="totalRB" onchange="changeAxes()" checked>total roll backs</input>
         <input type="checkbox" class="filter_button" id="primaryRB" onchange="changeAxes()" checked>primary roll backs</input></br>
         <input type="checkbox" class="filter_button" id="secondaryRB" onchange="changeAxes()" checked>secondary roll backs</input>
-        <input type="checkbox" class="filter_button" id="fossilCollect" onchange="changeAxes()" checked>fossil collect attempts</input>
+        <input type="checkbox" class="filter_button" id="fossilCollect" onchange="changeAxes()">fossil collect attempts</input>
         <input type="checkbox" class="filter_button" id="netevents" onchange="changeAxes()" checked>net events processed</input>
         <input type="checkbox" class="filter_button" id="remoteSends" onchange="changeAxes()" checked>remote sends</input>
         <input type="checkbox" class="filter_button" id="remoteRecvs" onchange="changeAxes()" checked>remote recvs</input>
@@ -325,10 +355,10 @@
     <div id ="colorSelections" style="width:300px;height:200px">
         Color Schemes:</br> 
         <select onchange="changeColors()" id="colorChoice">
-            <option value="0">Black on white bg</option>
-            <option value="1">White on black bg</option>
-            <option value="2">Colorful on white bg</option>
-            <option value="3">Colorful on black bg</option>
+            <option value="0">Colorful on white bg</option>
+            <option value="1">Colorful on black bg</option>
+            <option value="2">Black on white bg</option>
+            <option value="3">White on black bg</option>
             <option value="4">Gray on white bg</option>
             <option value="5">Gray on black bg</option>
             <option value="6">Cool tones on white bg</option>

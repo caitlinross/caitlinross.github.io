@@ -14,7 +14,7 @@
         // Adapted from https://syntagmatic.github.io/parallel-coordinates/ by Kai Chang
         // this uses Chang's d3.parcoords javascript library that is built on top of d3 
         // load csv file and create the chart
-        d3.csv('data/alldata-batch.csv', function(data) {
+        d3.csv('data/alldata-slimfly-batch.csv', function(data) {
             var colorgen = d3.scale.ordinal()
                 .range(["#a6cee3","#1f78b4","#b2df8a","#33a02c",
                     "#fb9a99","#e31a1c","#fdbf6f","#ff7f00",
@@ -39,7 +39,7 @@
         });
 
         // load csv file and create the chart
-        d3.csv('data/alldata-gvt.csv', function(data) {
+        d3.csv('data/alldata-slimfly-gvt.csv', function(data) {
             var colorgen = d3.scale.ordinal()
                 .range(["#a6cee3","#1f78b4","#b2df8a","#33a02c",
                     "#fb9a99","#e31a1c","#fdbf6f","#ff7f00",
