@@ -11,6 +11,7 @@ so links will be posted here:
 
 * [Parallel Coordinates](http://caitlinross.github.io/vis/parcoords.html)
 * [Parallel Coordinates Improved](http://caitlinross.github.io/vis/parcoords2.html)
+* [Streamgraphs of Dragonfly and Slimfly data](http://caitlinross.github.io/vis/streamgraph.html)
 
 
 
