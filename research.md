@@ -13,7 +13,7 @@ img { width: 50%; margin: 0 auto; display: block; }
 <h3>Graduate Research Assistant, RPI</h3>
 <h4>August 2014 - Present</h4>
 <p>Advisor: <a href="http://www.cs.rpi.edu/~chrisc/">Chris Carothers</a><br/>
-I work on discrete-event simulations of scientific workflows.  Currently I am working on a simulation of the <a href="http://metagenomics.anl.gov">MG-RAST metagenomics analysis server</a>. The simulation is being developed in C using the <a href="https://github.com/carothersc/ROSS">ROSS</a> and <a href="http://www.mcs.anl.gov/research/projects/codes/">CODES</a> simulation frameworks.  I am using simulation to explore options to improve the scalability of MG-RAST. 
+I work on discrete-event simulation.  I have developed a simulation of the <a href="http://metagenomics.anl.gov">MG-RAST metagenomics analysis server</a>. MG-RAST uses a centralized data server, so in the simulation, I look at adding proxy servers to help distribute the load of the data server, as well as a proxy-aware scheduling methodology that helps to reduce data movement over wide area network links.  This work was published in [PADS '16](http://www.acm-sigsim-pads.org/). You can find the paper [here](http://www.mcs.anl.gov/publication/case-study-using-discrete-event-simulation-improve-scalability-mg-rast).  The simulation was developed in C using the <a href="https://github.com/carothersc/ROSS">ROSS</a> and <a href="http://www.mcs.anl.gov/research/projects/codes/">CODES</a> simulation frameworks.  
 </p>
 <h3>Intern, NASA Goddard Space Flight Center</h3>
 <h4>June 2014 - August 2014</h4>
