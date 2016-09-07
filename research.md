@@ -13,7 +13,10 @@ img { width: 50%; margin: 0 auto; display: block; }
 <h3>Graduate Research Assistant, RPI</h3>
 <h4>August 2014 - Present</h4>
 <p>Advisor: <a href="http://www.cs.rpi.edu/~chrisc/">Chris Carothers</a><br/>
-I work on discrete-event simulation.  I have developed a simulation of the <a href="http://metagenomics.anl.gov">MG-RAST metagenomics analysis server</a>. MG-RAST uses a centralized data server, so in the simulation, I look at adding proxy servers to help distribute the load of the data server, as well as a proxy-aware scheduling methodology that helps to reduce data movement over wide area network links.  This work was published in <a href="http://www.acm-sigsim-pads.org/">PADS '16</a>. You can find the paper <a href="http://www.mcs.anl.gov/publication/case-study-using-discrete-event-simulation-improve-scalability-mg-rast">here</a>.  The simulation was developed in C using the <a href="https://github.com/carothersc/ROSS">ROSS</a> and <a href="http://www.mcs.anl.gov/research/projects/codes/">CODES</a> simulation frameworks.  
+I work in the area of parallel discrete-event simulation (PDES).  Currently I am working on adding support for performance analysis and visualization to the <a href="https://github.com/carothersc/ROSS">ROSS</a>  and <a href="http://www.mcs.anl.gov/research/projects/codes/">CODES</a> optimistic PDES frameworks.  Specifically I am adding instrumentation capabilities to ROSS to collect data about the simulation engine so we can understand how the performance is affected by the rollback behavior of different models.  </p>
+
+<p>
+In the past, I've worked on a model of the <a href="http://metagenomics.anl.gov">MG-RAST metagenomics analysis server</a>. MG-RAST uses a centralized data server, so in the simulation, I look at adding proxy servers to help distribute the load of the data server, as well as a proxy-aware scheduling methodology that helps to reduce data movement over wide area network links.  This work was published in <a href="http://www.acm-sigsim-pads.org/">PADS '16</a>. You can find the paper <a href="http://www.mcs.anl.gov/publication/case-study-using-discrete-event-simulation-improve-scalability-mg-rast">here</a>. 
 </p>
 <h3>Intern, NASA Goddard Space Flight Center</h3>
 <h4>June 2014 - August 2014</h4>
