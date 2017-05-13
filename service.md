@@ -9,17 +9,26 @@ img { width: 50%; margin: 0 auto; display: block; }
 
 ![Profile Image]({{ site.url }}/{{ site.picture }})
 
-<h1>Service and Volunteer Activities</h1>
-<h3>CoderDojo Mentor</h3>
-<h4>September 2016 - Present</h4>
-<p>
+# Service and Volunteer Activities
 
-</p>
-<h3>ACM-W @ RPI</h3>
-<h4>Spring 2015 - Present</h4>
-<p>
-</p>
-<h3>NY Capital Hackathon for Inclusivity, Co-organizer</h3>
-<h4>January 2016 - April 2016</h4>
-<p>
-</p>
+### CoderDojo Mentor
+
+#### September 2016 - Present
+
+[CoderDojo](https://coderdojo.com/) is a club for children to learn programming.  
+I joined the Capital District Region CoderDojo in Fall 2016 as a mentor, assisting students and answering questions during the class.
+I also taught a class on Supercomputers and parallel computing in Spring 2017.
+
+### ACM-W @ RPI
+
+#### Spring 2015 - Spring 2017
+
+I was one of the original officers for RPI's ACM-W chapter.  I was Treasurer in 2015 and Vice Chair in 2016.
+As an officer, I helped plan social and professional events for our members.  
+
+### NY Capital Hackathon for Inclusivity, Co-organizer
+
+#### January 2016 - April 2016
+
+The [NY Capital Hackathon for Inclusivity](http://nychi.tech/) was held in April 2016 at RPI.
+As a co-organizer, I helped with planning, coordinating with event sponsors, and many other details. 

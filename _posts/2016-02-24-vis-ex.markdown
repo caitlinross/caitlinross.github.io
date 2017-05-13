@@ -9,9 +9,10 @@ tag: markdown
 I've been working on some visualizations for research and class,
 so links will be posted here:
 
-* [Parallel Coordinates](http://caitlinross.github.io/vis/parcoords.html)
-* [Parallel Coordinates Improved](http://caitlinross.github.io/vis/parcoords2.html)
-* [Streamgraphs of Dragonfly and Slimfly data](http://caitlinross.github.io/vis/streamgraph.html)
+* [Interactive Vis of Slimfly data](../vis-project/src)
+* [Parallel Coordinates](../vis/parcoords.html)
+* [Parallel Coordinates Improved](../vis/parcoords2.html)
+* [Streamgraphs of Dragonfly and Slimfly data](../vis/streamgraph.html)
 
 
 
