@@ -1,7 +1,6 @@
 ---
 title: "Visualizations"
 layout: post
-date: 2016-02-24 22:18
 tag: markdown
 #star: true
 ---

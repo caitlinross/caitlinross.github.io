@@ -1,37 +1,30 @@
-name: Caitlin Ross
-bio: 'PhD candidate in Computer Science'
-picture: 'assets/images/me.png'
+# Dependencies
+plugins:             [jekyll-paginate]
+markdown:         redcarpet
+highlighter:      pygments
 
-url: http://caitlinross.github.io/
-permalink: /:title/
+# Permalinks
+permalink:        pretty
 
-markdown: kramdown
-highlighter: rouge
+# Setup
+title:            'Caitlin Ross'
+tagline:          'Computer Science PhD Candidate'
+description:      'Computer Science PhD Candidate'
+url:              http://caitlinross.github.io
+baseurl:          /
 
-analytics: 'UA-MYANALYTICS'
-linkedin: in/caitlinross25
-github: caitlinross
-scholar: J-vQtYsAAAAJ&hl=en
-email: caitlinross25@gmail.com
+author:
+  name:           'Mark Otto'
+  url:            https://twitter.com/mdo
+picture:          'personal/me.png'
 
-exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor]
+paginate:         5
 
-# if you don't need pagination, comment the *paginate* configs below
-# paginate: 5
-# paginate_path: "blog/:num/"
+# Custom vars
+#version:          2.1.0
 
-projects: true
-about: true
-blog: true
+github:
+  repo:           https://github.com/caitlinross
 
-gems:
-  - jemoji
-  - jekyll-mentions
-  - jekyll-seo-tag
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-paginate
-
-jekyll-mentions:
-    base_url: https://github.com
+linkedin:         https://www.linkedin.com/in/caitlinross25/
+googlescholar:    https://scholar.google.com/citations?user=J-vQtYsAAAAJ&hl=en
