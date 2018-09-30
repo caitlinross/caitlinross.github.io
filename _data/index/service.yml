@@ -1,0 +1,56 @@
+- name:
+    detail: Supercomputing 2018, Dallas, TX
+    i18n: 
+  desc:
+    detail: 
+    i18n: 
+  date:
+    detail: Nov. 2018
+    i18n: 
+  job:
+    detail: Student Volunteer
+    i18n: 
+  icon: fa-laptop
+
+- name:
+    detail: CoderDojo, Albany, NY
+    i18n: 
+  desc:
+    detail: I joined the Capital District Region CoderDojo in Fall 2016 as a mentor, assisting students during the class. I have also designed and taught classes on Supercomputers/parallel computing, how to program tasks for Alexa Voice Services, programmatically making music with Sonic Pi, and video surveillance/motion detection using Raspberry Pis.
+    i18n: 
+  date:
+    detail: Sep. 2016 - May 2018
+    i18n: 
+  job:
+    detail: Mentor/Teacher
+    i18n: 
+  icon: fa-laptop
+
+- name:
+    detail: ACM-W, RPI Chapter, Troy, NY
+    i18n: 
+  desc:
+    detail: I was one of the original officers for RPI’s ACM-W chapter. I was Treasurer in 2015 and Vice Chair in 2016. As an officer, I helped plan social and professional events for our members.
+    i18n: 
+  date:
+    detail: Spring 2015 - Spring 2017
+    i18n: 
+  job:
+    detail: Treasurer, Vice Chair
+    i18n: 
+  icon: fa-laptop
+
+- name:
+    detail: NY Capital Hackathon for Incusivity, Troy, NY
+    i18n: 
+  desc:
+    detail: The NY Capital Hackathon for Inclusivity was held in April 2016 at RPI. As a co-organizer, I helped with planning, coordinating with event sponsors, and many other details.
+    i18n: 
+  date:
+    detail: Jan. 2016 - Apr. 2016
+    i18n: 
+  job:
+    detail: Co-organizer
+    i18n: 
+  icon: fa-laptop
+

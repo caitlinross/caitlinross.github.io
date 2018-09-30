@@ -1,0 +1,21 @@
+---
+layout: post
+title: "Visualizations"
+date: 2016-02-24
+categories: [Projects]
+tag: [vis,visualization]
+#star: true
+---
+
+I've been working on some visualizations for research and class,
+so links will be posted here:
+
+* [Interactive Vis of Slimfly data](../vis-project/src)
+* [Parallel Coordinates](../vis/parcoords.html)
+* [Parallel Coordinates Improved](../vis/parcoords2.html)
+* [Streamgraphs of Dragonfly and Slimfly data](../vis/streamgraph.html)
+
+
+
+
+

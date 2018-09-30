@@ -1,0 +1,13 @@
+---
+layout: post
+title: "Artwork"
+date: 2017-05-12
+categories: [Hobbies]
+tag: [art,drawing,painting]
+#star: true
+---
+
+I like to draw and paint from time to time.  Here's a collection of some things I've worked on recently:
+
+* [Plumeria Painting - Acrylic](../myart/plumeria.jpg)
+* [Zoey Deschanel Drawing - pencil](../myart/zoey-drawing.jpg)
