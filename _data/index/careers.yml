@@ -1,0 +1,95 @@
+# careers section data
+# if you don't have language feature(language.yml is empty), ignore "i18n" items
+- name:
+    detail: Argonne National Laboratory, Lemont, IL
+    i18n: 
+  desc:
+    detail: I am currently working on my dissertation at ANL as part of the DOE Office of Science's Graduate Student Research Program.
+    i18n: 
+  date:
+    detail: Jun. 2018 - Present
+    i18n: 
+  job:
+    detail: Visiting Student
+    i18n: 
+  icon: fa-laptop
+
+- name:
+    detail: Rensselaer Polytechnic Institute, Troy, NY
+    i18n: 
+  desc:
+    detail: Currently working on the development of an in situ analysis system to run alongside our simulator, ROSS. This system will process high-resolution performance and model data collected from the simulations to help us gain more insight to performance phenomena in simulations. Some other work that I've done while an RA includes developing 3D animations of our network simulation data using VTK and ParaView, as well as working on a simulation of a metagenomics analysis service provided by Argonne National Lab.
+    i18n: 
+  date:
+    detail: Aug. 2014 - Present
+    i18n: 
+  job:
+    detail: Graduate Research Assistant
+    i18n: 
+  icon: fa-university
+
+- name:
+    detail: Rensselaer Polytechnic Institute, Troy, NY
+    i18n: 
+  desc:
+    detail: Successfully passed candidacy exam!
+    i18n: 
+  date:
+    detail: May 2017
+    i18n: 
+  job:
+    detail: PhD Candidate
+    i18n: 
+  icon: fa-university
+  
+- name: 
+    detail: Viasat, Carlsbad, CA
+    i18n: 
+  desc:
+    detail: The goal of this project was to develop a framework for finding anomalies in streaming data (e.g., finding network failures). The anomaly detection framework was implemented in Scala and accepts Spark Streaming data of varying formats. A few simple anomaly detection algorithms were implemented (e.g., exponential moving average), but the modular design of this framework allows for the easy addition of other anomaly detection algorithms. To allow this service to be easily used by less technical employees, a web application was also developed which allows users to easily configure the anomaly detection service for their data without having to touch any of the code.
+    i18n: 
+  date: 
+    detail: Jun. 2017 - Aug. 2017
+    i18n: 
+  job:
+    detail: Data Science Intern
+    i18n: 
+  icon: fa-laptop
+
+- name: 
+    detail: NASA Goddard Space Flight Center, Greenbelt, MD
+    i18n: 
+  desc:
+    detail: I worked for the NASA Center for Climate Simulation (NCCS). While there, I worked with a Hadoop cluster that they used for storing climate data. I evaluated the use of Impala and Hive with several file types (Sequence, RC, and Parquet). Impala and Hive are both SQL query engines that run on Hadoop/HDFS, but Hive creates 1 or more MapReduce jobs from queries, whereas Impala uses massively parallel processing.
+    i18n: 
+  date:
+    detail: Jun. 2014 - Aug. 2014
+    i18n: 
+  job:
+    detail: Computer Science Intern
+    i18n: 
+  icon: fa-laptop
+
+- name:
+    detail: The University of North Carolina at Greensboro, Greensboro, NC
+  desc:
+    detail: Graduated summa cum laude.
+  date:
+    detail: May 2014
+  job:
+    detail: BS in Computer Science
+  icon: fa-graduation-cap
+
+- name: 
+    detail: University of North Carolina at Greensboro, Greensboro, NC
+    i18n: 
+  desc:
+    detail: I worked on a couple of research projects as an undergrad. In my first research project, I used game theory to study the evolution of altruism and wrote a simulation of our model in C++. My second research project was a bioinformatics project that looked at the effect of genomic features on recombination rates in Apis mellifera (honeybee). For this, I wrote Python scripts to collect information about features, such as looking for certain motifs, di, tri, and tetra nucleotides, and so on.
+    i18n: 
+  date:
+    detail: Jan. 2012 - May 2014
+    i18n: 
+  job:
+    detail: Undergraduate Research Assistant
+    i18n: 
+  icon: fa-university

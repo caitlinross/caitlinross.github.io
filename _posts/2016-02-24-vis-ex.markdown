@@ -1,7 +1,9 @@
 ---
-title: "Visualizations"
 layout: post
-tag: markdown
+title: "Visualizations"
+date: 2016-02-24
+categories: [Projects]
+tag: [vis,visualization]
 #star: true
 ---
 

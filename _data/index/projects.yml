@@ -1,0 +1,24 @@
+# projects section data
+# If you don't have language feature(language.yml is empty), ignore "i18n" items
+# Suggest projects' img be located at '/static/assets/img/landing', and edit following img items.
+- name: ROSS
+  i18n: 
+  gh_user: carothersc
+  repo: ROSS
+  img: 
+  desc: Rensselaer's Optimistic Simulation System (ROSS) is an open source parallel discrete event simulation framework developed in C. I help with maintenance and development of new features.
+
+- name: ROSS-Damaris
+  i18n: 
+  gh_user: caitlinross
+  repo: ROSS-damaris
+  img: 
+  desc: This project is an in situ analysis system being built for ROSS simulations as part of my PhD thesis.
+
+- name: CODES
+  i18n: 
+  gl_user: codes
+  gl_repo: codes
+  img: 
+  desc: CODES is a simulation framework built on top of ROSS. It contains a variety of high performance computing network, workload, and storage models.
+
