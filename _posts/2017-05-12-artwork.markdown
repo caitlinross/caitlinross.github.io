@@ -9,5 +9,5 @@ tag: [art,drawing,painting]
 
 I like to draw and paint from time to time.  Here's a collection of some things I've worked on recently:
 
-* [Plumeria Painting - Acrylic](../myart/plumeria.jpg)
-* [Zoey Deschanel Drawing - pencil](../myart/zoey-drawing.jpg)
+<img src="{{ site.img_path }}/myart/plumeria.jpg" width="75%">
+<img src="{{ site.img_path }}/myart/zoey-drawing.jpg" width="75%">
