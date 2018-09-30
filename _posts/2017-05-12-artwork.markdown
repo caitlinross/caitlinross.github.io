@@ -1,8 +1,9 @@
 ---
-title: "Artwork"
 layout: post
-date: 2017-05-12 22:18
-tag: markdown
+title: "Artwork"
+date: 2017-05-12
+categories: [Hobbies]
+tag: [art,drawing,painting]
 #star: true
 ---
 
