@@ -1,20 +1,6 @@
 # careers section data
 # if you don't have language feature(language.yml is empty), ignore "i18n" items
 - name:
-    detail: Argonne National Laboratory, Lemont, IL
-    i18n: 
-  desc:
-    detail: I am currently working on my dissertation at ANL as part of the DOE Office of Science's Graduate Student Research Program.
-    i18n: 
-  date:
-    detail: Jun. 2018 - Present
-    i18n: 
-  job:
-    detail: Visiting Student
-    i18n: 
-  icon: fa-laptop
-
-- name:
     detail: Rensselaer Polytechnic Institute, Troy, NY
     i18n: 
   desc:
@@ -29,19 +15,19 @@
   icon: fa-university
 
 - name:
-    detail: Rensselaer Polytechnic Institute, Troy, NY
+    detail: Argonne National Laboratory, Lemont, IL
     i18n: 
   desc:
-    detail: Successfully passed candidacy exam!
+    detail: Worked on my dissertation at ANL as part of the DOE Office of Science's Graduate Student Research Program.
     i18n: 
   date:
-    detail: May 2017
+    detail: Jun. 2018 - Dec. 2018
     i18n: 
   job:
-    detail: PhD Candidate
+    detail: Visiting Student
     i18n: 
-  icon: fa-university
-  
+  icon: fa-laptop
+
 - name: 
     detail: Viasat, Carlsbad, CA
     i18n: 
@@ -55,6 +41,20 @@
     detail: Data Science Intern
     i18n: 
   icon: fa-laptop
+
+- name:
+    detail: Rensselaer Polytechnic Institute, Troy, NY
+    i18n: 
+  desc:
+    detail: Successfully passed candidacy exam!
+    i18n: 
+  date:
+    detail: May 2017
+    i18n: 
+  job:
+    detail: PhD Candidate
+    i18n: 
+  icon: fa-university
 
 - name: 
     detail: NASA Goddard Space Flight Center, Greenbelt, MD

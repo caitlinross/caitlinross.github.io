@@ -3,15 +3,15 @@
 # Suggest projects' img be located at '/static/assets/img/landing', and edit following img items.
 - name: ROSS
   i18n: 
-  gh_user: carothersc
+  gh_user: ROSS-org
   repo: ROSS
   img: 
   desc: Rensselaer's Optimistic Simulation System (ROSS) is an open source parallel discrete event simulation framework developed in C. I help with maintenance and development of new features.
 
-- name: ROSS-Damaris
+- name: RISA
   i18n: 
-  gh_user: caitlinross
-  repo: ROSS-damaris
+  gh_user: ROSS-org
+  repo: RISA
   img: 
   desc: This project is an in situ analysis system being built for ROSS simulations as part of my PhD thesis.
 
