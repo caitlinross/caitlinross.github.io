@@ -1,4 +1,18 @@
 - name:
+    detail: Women in HPC Workshop at SC19
+    i18n: 
+  desc:
+    detail: Updating website for WHPC workshop at SC19.
+    i18n: 
+  date:
+    detail: May 2019 - Nov. 2019
+    i18n: 
+  job:
+    detail: Website Chair
+    i18n: 
+  icon: fa-laptop
+
+- name:
     detail: Supercomputing 2018, Dallas, TX
     i18n: 
   desc:
