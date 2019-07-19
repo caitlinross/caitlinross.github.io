@@ -1,13 +1,41 @@
 # careers section data
 # if you don't have language feature(language.yml is empty), ignore "i18n" items
 - name:
+    detail: Kitware, Clifton Park, NY
+    i18n: 
+  desc:
+    detail: Coming soon! 
+    i18n: 
+  date:
+    detail: Starting Aug. 2019
+    i18n: 
+  job:
+    detail: Research and Development Engineer
+    i18n: 
+  icon: fa-laptop
+
+- name:
+    detail: Rensselaer Polytechnic Institute, Troy, NY
+    i18n: 
+  desc:
+    detail: Successfully defended thesis!
+    i18n: 
+  date:
+    detail: July 2019
+    i18n: 
+  job:
+    detail: PhD Thesis Defense 
+    i18n: 
+  icon: fa-university
+
+- name:
     detail: Rensselaer Polytechnic Institute, Troy, NY
     i18n: 
   desc:
     detail: Currently working on the development of an in situ analysis system to run alongside our simulator, ROSS. This system will process high-resolution performance and model data collected from the simulations to help us gain more insight to performance phenomena in simulations. Some other work that I've done while an RA includes developing 3D animations of our network simulation data using VTK and ParaView, as well as working on a simulation of a metagenomics analysis service provided by Argonne National Lab.
     i18n: 
   date:
-    detail: Aug. 2014 - Present
+    detail: Aug. 2014 - Jul. 2019
     i18n: 
   job:
     detail: Graduate Research Assistant
@@ -52,7 +80,7 @@
     detail: May 2017
     i18n: 
   job:
-    detail: PhD Candidate
+    detail: PhD Candidacy Exam
     i18n: 
   icon: fa-university
 
