@@ -17,8 +17,8 @@
 
 - name: CODES
   i18n: 
-  gl_user: codes
-  gl_repo: codes
+  gh_user: codes-org
+  gh_repo: codes
   img: 
   desc: CODES is a simulation framework built on top of ROSS. It contains a variety of high performance computing network, workload, and storage models.
 
